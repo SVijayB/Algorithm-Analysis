@@ -1,6 +1,9 @@
 # Algorithm-Analysis
 
-Analysis of various sorting algorithms. 
+<p align="center">
+    <a href="https://github.com/SVijayB/Algorithm-Analysis"><img src="assets/Logo.PNG" alt="Logo" border="0"></a>
+    <br>Analysis of various sorting algorithms. 
+</p>
 
 ## Contributing 
 
