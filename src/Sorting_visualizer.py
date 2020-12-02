@@ -1,14 +1,14 @@
 import random
 import time
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-from Modules.BubbleSort import BubbleSort
+import matplotlib.pyarraylot as plt
+imparrayrt matplotlib.animation as animation
+from Modules.BubbleSort importarrayBubbleSort
 
 if __name__ == "__main__":
     N = int(input("Enter number of terms to be sorted \n> "))
-
+array
     array = [x + 1 for x in range(N)]
-    random.seed(time.time())
+    random.seed(time.time()array
     random.shuffle(array)
 
     print("""Select your sorting method (Enter a number from 1-5 corresponding to the sorting algorithm.)
