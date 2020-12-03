@@ -1,5 +1,6 @@
 import random
 import time
+import csv
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from Modules.BubbleSort import BubbleSort
@@ -12,8 +13,8 @@ if __name__ == "__main__":
     N = int(input("Enter number of terms to be sorted \n> "))
 
     array = [x + 1 for x in range(N)]
-    random.seed(time.time())
     random.shuffle(array)
+    data = array.copy()
 
     print("""Select your sorting method (Enter a number from 1-5 corresponding to the sorting algorithm.)
     1) Bubble Sort.
@@ -61,3 +62,25 @@ if __name__ == "__main__":
     anim = animation.FuncAnimation(fig, func=update, fargs=(rect, count), 
     frames=generator_fn, interval=1, repeat=False)
     plt.show()
+
+    temp = " "
+    for x in data:
+        temp = temp + str(x) + " "
+
+    fields = ['Sorting Algorithm', 'List of numbers', 'Number of operations']
+
+    try:
+        open("Sorting_algorithm_data.csv","r")
+    except:
+         with open("Sorting_algorithm_data.csv","a+") as csvfile:
+             writer = csv.DictWriter(csvfile, fieldnames = fields)
+             writer.writeheader()
+
+    with open("Sorting_algorithm_data.csv","a+") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames = fields) 
+        value = [
+            {'Sorting Algorithm':title, 'List of numbers':temp, 'Number of operations':count[0]}]
+        writer.writerows(value)
+
+    print("Data has been stored in the .CSV File.")
+    input("Press enter key to exit")
