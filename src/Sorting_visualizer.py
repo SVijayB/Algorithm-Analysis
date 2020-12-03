@@ -1,6 +1,7 @@
 import random
 import time
 import os
+import sys
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from Modules.BubbleSort import BubbleSort
@@ -9,28 +10,46 @@ from Modules.MergeSort import MergeSort
 from Modules.QuickSort import QuickSort
 from Modules.SelectionSort import SelectionSort
 from Modules.Csv_writer import write
+from Modules.Colours import *
 
 if __name__ == "__main__":
 
     os.system('cls')
     logo = open("../assets/logo.txt","r")
     output = "".join(logo.readlines())
-    print(output)
+    grey(output)
+    cyan("\n"+"-"*20)
+    print()
     time.sleep(1)
 
-    N = int(input("Enter number of terms to be sorted \n> "))
+    try:
+        N = int(input("Enter number of integers to be sorted \n> "))
+    except:
+        red("ERROR : Enter only numbers!")
+        grey("Press enter key to exit...")
+        input()
+        sys.exit(0)
 
     array = [x + 1 for x in range(N)]
     random.shuffle(array)
     data = array.copy()
 
-    print("""Select your sorting method (Enter a number from 1-5 corresponding to the sorting algorithm.)
+    print()
+
+    print("""Select your sorting method ->
+(Enter a number from 1-5 corresponding to the sorting algorithm)
     1) Bubble Sort.
     2) Insertion Sort.
     3) Merge Sort.
     4) Quick Sort.
-    5) Selection Sort""") 
-    choice = int(input("> "))
+    5) Selection Sort""")
+    try:
+        choice = int(input("> "))
+    except:
+        red("ERROR : Enter numbers from 1 to 5 only!")
+        grey("Press enter key to exit...")
+        input()
+        sys.exit(0)
 
     if(choice == 1):
         title = "Bubble Sort"
@@ -48,7 +67,11 @@ if __name__ == "__main__":
         title = "Selection Sort"
         generator_fn = SelectionSort(array)
     else:
-        print("Incorrect choice")
+        print()
+        red("ERROR : Incorrect choice. Select numbers from 1 to 5 only!")
+        grey("Press enter key to exit...")
+        input()
+        sys.exit(0)
 
     fig, axis = plt.subplots()
     axis.set_title(title)

@@ -1,4 +1,5 @@
 import csv
+from Modules.Colours import *
 
 def write(title,data,count):
 
@@ -21,5 +22,7 @@ def write(title,data,count):
             {'Sorting Algorithm':title, 'List of numbers':temp, 'Number of operations':count}]
         writer.writerows(value)
 
-    print("Data has been stored in the .CSV File.")
-    input("Press enter key to exit")
+    print()
+    green("Data has been stored in the Sorting_algorithm_data.csv File!")
+    grey("Press enter key to exit")
+    input()
