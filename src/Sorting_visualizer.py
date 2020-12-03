@@ -1,5 +1,6 @@
 import random
 import time
+import os
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from Modules.BubbleSort import BubbleSort
@@ -10,6 +11,13 @@ from Modules.SelectionSort import SelectionSort
 from Modules.Csv_writer import write
 
 if __name__ == "__main__":
+
+    os.system('cls')
+    logo = open("../assets/logo.txt","r")
+    output = "".join(logo.readlines())
+    print(output)
+    time.sleep(1)
+
     N = int(input("Enter number of terms to be sorted \n> "))
 
     array = [x + 1 for x in range(N)]
