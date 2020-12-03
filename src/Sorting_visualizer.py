@@ -1,6 +1,5 @@
 import random
 import time
-import csv
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from Modules.BubbleSort import BubbleSort
@@ -8,6 +7,7 @@ from Modules.InsertionSort import InsertionSort
 from Modules.MergeSort import MergeSort
 from Modules.QuickSort import QuickSort
 from Modules.SelectionSort import SelectionSort
+from Modules.Csv_writer import write
 
 if __name__ == "__main__":
     N = int(input("Enter number of terms to be sorted \n> "))
@@ -63,24 +63,4 @@ if __name__ == "__main__":
     frames=generator_fn, interval=1, repeat=False)
     plt.show()
 
-    temp = " "
-    for x in data:
-        temp = temp + str(x) + " "
-
-    fields = ['Sorting Algorithm', 'List of numbers', 'Number of operations']
-
-    try:
-        open("Sorting_algorithm_data.csv","r")
-    except:
-         with open("Sorting_algorithm_data.csv","a+") as csvfile:
-             writer = csv.DictWriter(csvfile, fieldnames = fields)
-             writer.writeheader()
-
-    with open("Sorting_algorithm_data.csv","a+") as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames = fields) 
-        value = [
-            {'Sorting Algorithm':title, 'List of numbers':temp, 'Number of operations':count[0]}]
-        writer.writerows(value)
-
-    print("Data has been stored in the .CSV File.")
-    input("Press enter key to exit")
+    write(title,data,count[0])
