@@ -1,6 +1,6 @@
 from Modules.Swap import swap
 
-def quicksort(array, low, high):
+def QuickSort(array, low, high):
     if low >= high:
         return
 
@@ -15,5 +15,5 @@ def quicksort(array, low, high):
     swap(array, high, index)
     yield array
 
-    yield from quicksort(array, low, index - 1)
-    yield from quicksort(array, index + 1, high)
+    yield from QuickSort(array, low, index - 1)
+    yield from QuickSort(array, index + 1, high)

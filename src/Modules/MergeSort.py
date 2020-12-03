@@ -1,11 +1,11 @@
-def mergesort(array, low, high):
+def MergeSort(array, low, high):
 
     if high <= low:
         return
 
     mid = low + ((high - low + 1) // 2) - 1
-    yield from mergesort(array, low, mid)
-    yield from mergesort(array, mid + 1, high)
+    yield from MergeSort(array, low, mid)
+    yield from MergeSort(array, mid + 1, high)
     yield from merge(array, low, mid, high)
     yield array
 

@@ -3,6 +3,11 @@ import time
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from Modules.BubbleSort import BubbleSort
+from Modules.InsertionSort import InsertionSort
+from Modules.MergeSort import MergeSort
+from Modules.QuickSort import QuickSort
+from Modules.SelectionSort import SelectionSort
+from Modules import *
 
 if __name__ == "__main__":
     N = int(input("Enter number of terms to be sorted \n> "))
