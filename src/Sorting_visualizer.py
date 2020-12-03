@@ -7,7 +7,6 @@ from Modules.InsertionSort import InsertionSort
 from Modules.MergeSort import MergeSort
 from Modules.QuickSort import QuickSort
 from Modules.SelectionSort import SelectionSort
-from Modules import *
 
 if __name__ == "__main__":
     N = int(input("Enter number of terms to be sorted \n> "))
@@ -41,3 +40,24 @@ if __name__ == "__main__":
         generator_fn = SelectionSort(array)
     else:
         print("Incorrect choice")
+
+    fig, axis = plt.subplots()
+    axis.set_title(title)
+
+    rect = axis.bar(range(N), array, align="edge")
+
+    axis.set_xlim(0, N)
+    axis.set_ylim(0, int(1.05 * N))
+
+    text = axis.text(0.02, 0.95, "", transform=axis.transAxes)
+
+    count = [0]
+    def update(array, rect, count):
+        for x, val in zip(rect, array):
+            x.set_height(val)
+        count[0] += 1
+        text.set_text("# of operations: {}".format(count[0]))
+
+    anim = animation.FuncAnimation(fig, func=update, fargs=(rect, count), 
+    frames=generator_fn, interval=1, repeat=False)
+    plt.show()
