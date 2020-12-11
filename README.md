@@ -21,6 +21,16 @@ As an alternative, you could also clone the repository using,
 git clone https://github.com/SVijayB/Algorithm-Analysis.git
 </pre>
 
+## Usage
+
+Once you have files on your local system, you can launch it by double tapping the `Sorting_visualizer.py` file present in the **`src`** folder. You can do this only if you have the *python launcher* installed.
+
+Else, `cd/` to the src folder on your terminal and type `python Sorting_visualizer.py`.
+
+Enter the number of terms to be sorted and select your sorting algorithm.
+
+**Note** : Once visualisation is completed, you can find all the information about it present within the `Sorting_algorithm_data.csv` file created in the src folder.
+
 ## Contributing 
 
 To contribute to Algorithm-Analysis, fork the repository, create a new branch and send us a pull request. Make sure you read [CONTRIBUTING.md](https://github.com/SVijayB/Algorithm-Analysis/blob/master/.github/CONTRIBUTING.md) before sending us Pull requests. 
