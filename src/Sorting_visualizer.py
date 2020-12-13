@@ -94,4 +94,4 @@ if __name__ == "__main__":
     frames=generator_fn, interval=1, repeat=False)
     plt.show()
 
-    write(title,data,count[0])
+    write(title,data,N,count[0])

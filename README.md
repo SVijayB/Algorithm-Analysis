@@ -23,7 +23,7 @@ git clone https://github.com/SVijayB/Algorithm-Analysis.git
 
 ## Usage
 
-Once you have files on your local system, you can launch it by double tapping the `Sorting_visualizer.py` file present in the **`src`** folder. You can do this only if you have the *python launcher* installed.
+Once you have all the files on your local system, you can launch it by double tapping the `Sorting_visualizer.py` file present in the **`src`** folder. You can do this only if you have the *python launcher* installed.
 
 Else, `cd/` to the src folder on your terminal and type `python Sorting_visualizer.py`.
 
