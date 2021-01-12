@@ -44,6 +44,12 @@ Enter the number of terms to be sorted and select your sorting algorithm.
 
 **Note** : Once visualisation is completed, you can find all the information about it present within the `Sorting_algorithm_data.csv` file created in the src folder.
 
+## Demo
+
+<p align="center">
+    <img src="assets/Demo.gif" alt="Demo" width = "720px "border="0">
+</p>
+
 ## Contributing 
 
 To contribute to Algorithm-Analysis, fork the repository, create a new branch and send us a pull request. Make sure you read [CONTRIBUTING.md](https://github.com/SVijayB/Algorithm-Analysis/blob/master/.github/CONTRIBUTING.md) before sending us Pull requests. 
