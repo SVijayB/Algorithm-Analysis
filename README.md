@@ -47,7 +47,12 @@ Enter the number of terms to be sorted and select your sorting algorithm.
 ## Demo
 
 <p align="center">
-    <img src="assets/Demo.gif" alt="Demo" width = "720px "border="0">
+    <img src="assets/Demo.gif" alt="Demo" width = "720px" border="0">
+</p>
+
+<p align="center">
+    <img src="assets/Data.PNG" alt="Data" width = "500px" border="0">
+    <br>Data collected
 </p>
 
 ## Contributing 
