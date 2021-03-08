@@ -14,11 +14,11 @@ from Modules.Colours import *
 
 if __name__ == "__main__":
 
-    os.system('cls')
-    logo = open("../assets/logo.txt","r")
+    os.system("cls")
+    logo = open("../assets/logo.txt", "r")
     output = "".join(logo.readlines())
     grey(output)
-    cyan("\n"+"-"*20)
+    cyan("\n" + "-" * 20)
     print()
     time.sleep(1)
 
@@ -36,13 +36,15 @@ if __name__ == "__main__":
 
     print()
 
-    print("""Select your sorting method ->
+    print(
+        """Select your sorting method ->
 (Enter a number from 1-5 corresponding to the sorting algorithm)
     1) Bubble Sort.
     2) Insertion Sort.
     3) Merge Sort.
     4) Quick Sort.
-    5) Selection Sort""")
+    5) Selection Sort"""
+    )
     try:
         choice = int(input("> "))
     except:
@@ -51,19 +53,19 @@ if __name__ == "__main__":
         input()
         sys.exit(0)
 
-    if(choice == 1):
+    if choice == 1:
         title = "Bubble Sort"
         generator_fn = BubbleSort(array)
-    elif(choice == 2):
+    elif choice == 2:
         title = "Insertion Sort"
         generator_fn = InsertionSort(array)
-    elif(choice == 3):
+    elif choice == 3:
         title = "Merge Sort"
         generator_fn = MergeSort(array, 0, N - 1)
-    elif(choice == 4):
+    elif choice == 4:
         title = "Quick Sort"
         generator_fn = QuickSort(array, 0, N - 1)
-    elif(choice == 5):
+    elif choice == 5:
         title = "Selection Sort"
         generator_fn = SelectionSort(array)
     else:
@@ -84,14 +86,21 @@ if __name__ == "__main__":
     text = axis.text(0.02, 0.95, "", transform=axis.transAxes)
 
     count = [0]
+
     def update(array, rect, count):
         for x, val in zip(rect, array):
             x.set_height(val)
         count[0] += 1
         text.set_text("# of operations: {}".format(count[0]))
 
-    anim = animation.FuncAnimation(fig, func=update, fargs=(rect, count), 
-    frames=generator_fn, interval=1, repeat=False)
+    anim = animation.FuncAnimation(
+        fig,
+        func=update,
+        fargs=(rect, count),
+        frames=generator_fn,
+        interval=1,
+        repeat=False,
+    )
     plt.show()
 
-    write(title,data,N,count[0])
+    write(title, data, N, count[0])

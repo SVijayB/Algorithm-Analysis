@@ -9,6 +9,7 @@ def MergeSort(array, low, high):
     yield from merge(array, low, mid, high)
     yield array
 
+
 def merge(A, start, mid, end):
     merged = []
     left_index = start

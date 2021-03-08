@@ -1,5 +1,6 @@
 from Modules.Swap import swap
 
+
 def QuickSort(array, low, high):
     if low >= high:
         return

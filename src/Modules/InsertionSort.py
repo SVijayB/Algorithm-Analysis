@@ -1,5 +1,6 @@
 from Modules.Swap import swap
 
+
 def InsertionSort(array):
     for i in range(1, len(array)):
         j = i

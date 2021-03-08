@@ -1,5 +1,6 @@
 from Modules.Swap import swap
 
+
 def SelectionSort(array):
     if len(array) == 1:
         return
